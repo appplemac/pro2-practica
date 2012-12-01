@@ -36,7 +36,7 @@ public:
      * \pre All the parameters have valid values.
      * \post The species with all the necessary information is created.
      */
-    Species(bool carnivorous, int nutritious_minimum, int nutritious_value, int nprey, vector<int> vprey);
+    Species(bool carnivorous, int nutritious_minimum, int nutritious_value, int nprey, vector<int> prey);
 
     /** @brief Default destructor.
      *
@@ -86,5 +86,17 @@ public:
      * prey vector of the implicit parameter.
      */
     void change_prey_preference();
+
+    /** @brief The operation of consulting one of the possible prey species.
+     *
+     * Allows us to get an id of a species with which we can alimentate current
+     * animal.
+     *
+     * \pre The implicit parameter is a valid instance of Species class.
+     * \post The id of a prey unit, registered in the prey vector of current
+     * species under the prey[seq] is returned if it exists. If the prey[seq]
+     * does not exist, -1 is returned.
+     */
+    int prey_id(int seq);
 };
 #endif
