@@ -1,0 +1,182 @@
+\hypertarget{class_grp_species}{\section{Grp\-Species Class Reference}
+\label{class_grp_species}\index{Grp\-Species@{Grp\-Species}}
+}
+
+
+Represents the Group of \hyperlink{class_species}{Species} – all the species that exist in the \hyperlink{class_world}{World}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_grp_species_aae01eb441932fe90e69af5295f7449d3}{Grp\-Species} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}{Grp\-Species} (vector$<$ \hyperlink{class_species}{Species} $>$ vspecies)
+\begin{DoxyCompactList}\small\item\em Constructor with extended set of settings. \end{DoxyCompactList}\item 
+\hyperlink{class_grp_species_aefa7f81cd9c5040080661a0aebbe94dd}{$\sim$\-Species} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_grp_species_a40bca706f2c7ff5c29ad64efef91f5b0}{is\-\_\-carnivorous} (int id)
+\begin{DoxyCompactList}\small\item\em The member species carnivorousness consultor operation. \end{DoxyCompactList}\item 
+int \hyperlink{class_grp_species_ad805d0ed7ae160591693a234cf13383e}{nutritious\-\_\-minimum} (int id)
+\begin{DoxyCompactList}\small\item\em Nutritious minimum consultor operation. \end{DoxyCompactList}\item 
+int \hyperlink{class_grp_species_ac1d5b1342c36aea055cc6bee2215f187}{nutritious\-\_\-value} (int id)
+\begin{DoxyCompactList}\small\item\em Nutritious value consultor operation. \end{DoxyCompactList}\item 
+void \hyperlink{class_grp_species_a5d5691f011fe8f195d3297f08a0596d7}{change\-\_\-prey\-\_\-preference} (int id)
+\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents the Group of \hyperlink{class_species}{Species} – all the species that exist in the \hyperlink{class_world}{World}. 
+
+Definition at line 13 of file Grp\-Species.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_grp_species_aae01eb441932fe90e69af5295f7449d3}{\index{Grp\-Species@{Grp\-Species}!Grp\-Species@{Grp\-Species}}
+\index{Grp\-Species@{Grp\-Species}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{Grp\-Species}]{\setlength{\rightskip}{0pt plus 5cm}Grp\-Species\-::\-Grp\-Species (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_aae01eb441932fe90e69af5295f7449d3}
+
+
+Default constructor. 
+
+Creates the empty group of species.
+
+\begin{DoxyPrecond}{Precondition}
+True. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Implicit parameter is an empty instance if the \hyperlink{class_grp_species}{Grp\-Species} class. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}{\index{Grp\-Species@{Grp\-Species}!Grp\-Species@{Grp\-Species}}
+\index{Grp\-Species@{Grp\-Species}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{Grp\-Species}]{\setlength{\rightskip}{0pt plus 5cm}Grp\-Species\-::\-Grp\-Species (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Species} $>$}]{vspecies}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}
+
+
+Constructor with extended set of settings. 
+
+Creates the group of species with the vector of \hyperlink{class_species}{Species} specified by the explicit parameter.
+
+\begin{DoxyPrecond}{Precondition}
+The explicit parameter is a valid vector of \hyperlink{class_species}{Species} objects. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The group of species with the member species specified by the explicit parameter is created. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_aefa7f81cd9c5040080661a0aebbe94dd}{\index{Grp\-Species@{Grp\-Species}!$\sim$\-Species@{$\sim$\-Species}}
+\index{$\sim$\-Species@{$\sim$\-Species}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{$\sim$\-Species}]{\setlength{\rightskip}{0pt plus 5cm}Grp\-Species\-::$\sim$\-Species (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_aefa7f81cd9c5040080661a0aebbe94dd}
+
+
+Default destructor. 
+
+Executed when the instance of \hyperlink{class_grp_species}{Grp\-Species} gets out of scope.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a \hyperlink{class_grp_species}{Grp\-Species} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The implicit parameter is destroyed. 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_grp_species_a40bca706f2c7ff5c29ad64efef91f5b0}{\index{Grp\-Species@{Grp\-Species}!is\-\_\-carnivorous@{is\-\_\-carnivorous}}
+\index{is\-\_\-carnivorous@{is\-\_\-carnivorous}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{is\-\_\-carnivorous}]{\setlength{\rightskip}{0pt plus 5cm}bool Grp\-Species\-::is\-\_\-carnivorous (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_a40bca706f2c7ff5c29ad64efef91f5b0}
+
+
+The member species carnivorousness consultor operation. 
+
+Allows us to get the information about our species' carnivorousness.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+
+The animal with the specified id exists in our group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the carnivorousness of the specified animal is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_ad805d0ed7ae160591693a234cf13383e}{\index{Grp\-Species@{Grp\-Species}!nutritious\-\_\-minimum@{nutritious\-\_\-minimum}}
+\index{nutritious\-\_\-minimum@{nutritious\-\_\-minimum}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{nutritious\-\_\-minimum}]{\setlength{\rightskip}{0pt plus 5cm}int Grp\-Species\-::nutritious\-\_\-minimum (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_ad805d0ed7ae160591693a234cf13383e}
+
+
+Nutritious minimum consultor operation. 
+
+Allows us to get the nutritious minimum for the member species.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+
+The animal with the specified id exists in our group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the nutritious minimum of the member species is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_ac1d5b1342c36aea055cc6bee2215f187}{\index{Grp\-Species@{Grp\-Species}!nutritious\-\_\-value@{nutritious\-\_\-value}}
+\index{nutritious\-\_\-value@{nutritious\-\_\-value}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{nutritious\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int Grp\-Species\-::nutritious\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_ac1d5b1342c36aea055cc6bee2215f187}
+
+
+Nutritious value consultor operation. 
+
+Allows us to get the nutritious value for the member species.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+
+The animal with the specified id exists in our group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the nutritious value of the member species is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_a5d5691f011fe8f195d3297f08a0596d7}{\index{Grp\-Species@{Grp\-Species}!change\-\_\-prey\-\_\-preference@{change\-\_\-prey\-\_\-preference}}
+\index{change\-\_\-prey\-\_\-preference@{change\-\_\-prey\-\_\-preference}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{change\-\_\-prey\-\_\-preference}]{\setlength{\rightskip}{0pt plus 5cm}void Grp\-Species\-::change\-\_\-prey\-\_\-preference (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_a5d5691f011fe8f195d3297f08a0596d7}
+
+
+The operation of change of the prey vector. 
+
+Allows us to update the prey preference for the the member species.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the updated prey preference is written to the prey vector of the member species. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_grp_species_8hpp}{Grp\-Species.\-hpp}\end{DoxyCompactItemize}

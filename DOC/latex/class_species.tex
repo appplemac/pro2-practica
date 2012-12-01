@@ -1,0 +1,180 @@
+\hypertarget{class_species}{\section{Species Class Reference}
+\label{class_species}\index{Species@{Species}}
+}
+
+
+Represents a base unit of the population – a \hyperlink{class_species}{Species}.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_species_abb0f8e3208b0cc676157b7dff837c0be}{Species} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_species_a66517a4f8a2507e555d8e05db47c549c}{Species} (bool carnivorous, int nutritious\-\_\-minimum, int nutritious\-\_\-value, int nprey, vector$<$ int $>$ vprey)
+\begin{DoxyCompactList}\small\item\em Constructor with extended set of settings. \end{DoxyCompactList}\item 
+\hyperlink{class_species_af36f93648e2dedc2f05b6fb0c067f35e}{$\sim$\-Species} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_species_ae9693788c20d6ba84b8dd950f1e90296}{is\-\_\-carnivorous} ()
+\begin{DoxyCompactList}\small\item\em Carnivorousness consultor operation. \end{DoxyCompactList}\item 
+int \hyperlink{class_species_a1ff07d6d5a5d03978d2c8df16f49b8d7}{nutritious\-\_\-minimum} ()
+\begin{DoxyCompactList}\small\item\em Nutritious minimum consultor operation. \end{DoxyCompactList}\item 
+int \hyperlink{class_species_abea0a065bd95c118115b6647fccb87a0}{nutritious\-\_\-value} ()
+\begin{DoxyCompactList}\small\item\em Nutritious value consultor operation. \end{DoxyCompactList}\item 
+void \hyperlink{class_species_a1292192418e6b58ff78a539b3742f2fc}{change\-\_\-prey\-\_\-preference} ()
+\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a base unit of the population – a \hyperlink{class_species}{Species}. 
+
+Definition at line 12 of file Species.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_species_abb0f8e3208b0cc676157b7dff837c0be}{\index{Species@{Species}!Species@{Species}}
+\index{Species@{Species}!Species@{Species}}
+\subsubsection[{Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::\-Species (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_abb0f8e3208b0cc676157b7dff837c0be}
+
+
+Default constructor. 
+
+Creates the empty species.
+
+\begin{DoxyPrecond}{Precondition}
+True. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Implicit parameter is an empty instance if the \hyperlink{class_species}{Species} class. 
+\end{DoxyPostcond}
+\hypertarget{class_species_a66517a4f8a2507e555d8e05db47c549c}{\index{Species@{Species}!Species@{Species}}
+\index{Species@{Species}!Species@{Species}}
+\subsubsection[{Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::\-Species (
+\begin{DoxyParamCaption}
+\item[{bool}]{carnivorous, }
+\item[{int}]{nutritious\-\_\-minimum, }
+\item[{int}]{nutritious\-\_\-value, }
+\item[{int}]{nprey, }
+\item[{vector$<$ int $>$}]{vprey}
+\end{DoxyParamCaption}
+)}}\label{class_species_a66517a4f8a2507e555d8e05db47c549c}
+
+
+Constructor with extended set of settings. 
+
+Creates the species with the specified values of carnivorousness, nutritious minimum, nutritious value, number of possible prey species and the vector of these prey species.
+
+\begin{DoxyPrecond}{Precondition}
+All the parameters have valid values. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The species with all the necessary information is created. 
+\end{DoxyPostcond}
+\hypertarget{class_species_af36f93648e2dedc2f05b6fb0c067f35e}{\index{Species@{Species}!$\sim$\-Species@{$\sim$\-Species}}
+\index{$\sim$\-Species@{$\sim$\-Species}!Species@{Species}}
+\subsubsection[{$\sim$\-Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::$\sim$\-Species (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_af36f93648e2dedc2f05b6fb0c067f35e}
+
+
+Default destructor. 
+
+Executed when the instance of \hyperlink{class_species}{Species} gets out of scope.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a non-\/empty \hyperlink{class_species}{Species} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The implicit parameter is destroyed. 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_species_ae9693788c20d6ba84b8dd950f1e90296}{\index{Species@{Species}!is\-\_\-carnivorous@{is\-\_\-carnivorous}}
+\index{is\-\_\-carnivorous@{is\-\_\-carnivorous}!Species@{Species}}
+\subsubsection[{is\-\_\-carnivorous}]{\setlength{\rightskip}{0pt plus 5cm}bool Species\-::is\-\_\-carnivorous (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_ae9693788c20d6ba84b8dd950f1e90296}
+
+
+Carnivorousness consultor operation. 
+
+Allows us to determine whether the species is carnivorous.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about carnivorousness of the implicit parameter is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_species_a1ff07d6d5a5d03978d2c8df16f49b8d7}{\index{Species@{Species}!nutritious\-\_\-minimum@{nutritious\-\_\-minimum}}
+\index{nutritious\-\_\-minimum@{nutritious\-\_\-minimum}!Species@{Species}}
+\subsubsection[{nutritious\-\_\-minimum}]{\setlength{\rightskip}{0pt plus 5cm}int Species\-::nutritious\-\_\-minimum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_a1ff07d6d5a5d03978d2c8df16f49b8d7}
+
+
+Nutritious minimum consultor operation. 
+
+Allows us to get the nutritious minimum for current species.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the nutritious minimum of the implicit parameter is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_species_abea0a065bd95c118115b6647fccb87a0}{\index{Species@{Species}!nutritious\-\_\-value@{nutritious\-\_\-value}}
+\index{nutritious\-\_\-value@{nutritious\-\_\-value}!Species@{Species}}
+\subsubsection[{nutritious\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int Species\-::nutritious\-\_\-value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_abea0a065bd95c118115b6647fccb87a0}
+
+
+Nutritious value consultor operation. 
+
+Allows us to get the nutritious value for current species.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the nutritious value of the implicit parameter is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_species_a1292192418e6b58ff78a539b3742f2fc}{\index{Species@{Species}!change\-\_\-prey\-\_\-preference@{change\-\_\-prey\-\_\-preference}}
+\index{change\-\_\-prey\-\_\-preference@{change\-\_\-prey\-\_\-preference}!Species@{Species}}
+\subsubsection[{change\-\_\-prey\-\_\-preference}]{\setlength{\rightskip}{0pt plus 5cm}void Species\-::change\-\_\-prey\-\_\-preference (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_a1292192418e6b58ff78a539b3742f2fc}
+
+
+The operation of change of the prey vector. 
+
+Allows us to update the prey preference for the current species
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the updated prey preference is written to the prey vector of the implicit parameter. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_species_8hpp}{Species.\-hpp}\end{DoxyCompactItemize}

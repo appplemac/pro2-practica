@@ -1,0 +1,170 @@
+\hypertarget{class_world}{\section{World Class Reference}
+\label{class_world}\index{World@{World}}
+}
+
+
+Represents the \hyperlink{class_world}{World} – the group of Regions.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}{World} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_world_ad72ff99135a1f23fb7cfab1db0ac1ef3}{World} (Arbre$<$ \hyperlink{class_region}{Region} $>$ regions)
+\begin{DoxyCompactList}\small\item\em Constructor with the main data structure (tree of regions) passed as an explicit parameter. \end{DoxyCompactList}\item 
+\hyperlink{class_world_a8c73fba541a5817fff65147ba47cd827}{$\sim$\-World} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_world_a60f792899e98b54682755748f2576700}{fight} ()
+\begin{DoxyCompactList}\small\item\em Fire up the fight between the species in the world. \end{DoxyCompactList}\item 
+void \hyperlink{class_world_aeb43ebd4d41db15d1c20e186f0e8d743}{get\-\_\-population} ()
+\begin{DoxyCompactList}\small\item\em Print the information about the population of the world. \end{DoxyCompactList}\item 
+void \hyperlink{class_world_a186351586ccff8563f96fee8271e5dd6}{migrate\-\_\-central} (\hyperlink{class_region}{Region} r, int h, int spec\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Perform a migration to the direction of the central plantation. \end{DoxyCompactList}\item 
+void \hyperlink{class_world_ae3475448895d1e9ccf66c5d60080abd4}{migrate\-\_\-periferic} (\hyperlink{class_region}{Region} r, int h, int spec\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Perform a migration to the direction of the perifery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents the \hyperlink{class_world}{World} – the group of Regions. 
+
+Definition at line 12 of file World.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\-::\-World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}
+
+
+Default constructor. 
+
+Executed on the creation of the new world.
+
+\begin{DoxyPrecond}{Precondition}
+True. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The result is an empty world. 
+\end{DoxyPostcond}
+\hypertarget{class_world_ad72ff99135a1f23fb7cfab1db0ac1ef3}{\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\subsubsection[{World}]{\setlength{\rightskip}{0pt plus 5cm}World\-::\-World (
+\begin{DoxyParamCaption}
+\item[{Arbre$<$ {\bf Region} $>$}]{regions}
+\end{DoxyParamCaption}
+)}}\label{class_world_ad72ff99135a1f23fb7cfab1db0ac1ef3}
+
+
+Constructor with the main data structure (tree of regions) passed as an explicit parameter. 
+
+\begin{DoxyPrecond}{Precondition}
+True. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The result is a world with the regions equal to those of the explicit parameter. 
+\end{DoxyPostcond}
+\hypertarget{class_world_a8c73fba541a5817fff65147ba47cd827}{\index{World@{World}!$\sim$\-World@{$\sim$\-World}}
+\index{$\sim$\-World@{$\sim$\-World}!World@{World}}
+\subsubsection[{$\sim$\-World}]{\setlength{\rightskip}{0pt plus 5cm}World\-::$\sim$\-World (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_world_a8c73fba541a5817fff65147ba47cd827}
+
+
+Default destructor. 
+
+Executed when the instance of \hyperlink{class_world}{World} gets out of scope.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a non-\/empty \hyperlink{class_world}{World} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The implicit parameter is destroyed. 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_world_a60f792899e98b54682755748f2576700}{\index{World@{World}!fight@{fight}}
+\index{fight@{fight}!World@{World}}
+\subsubsection[{fight}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::fight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_world_a60f792899e98b54682755748f2576700}
+
+
+Fire up the fight between the species in the world. 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a \hyperlink{class_world}{World} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The fight between species is launched in every region of the world. 
+\end{DoxyPostcond}
+\hypertarget{class_world_aeb43ebd4d41db15d1c20e186f0e8d743}{\index{World@{World}!get\-\_\-population@{get\-\_\-population}}
+\index{get\-\_\-population@{get\-\_\-population}!World@{World}}
+\subsubsection[{get\-\_\-population}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::get\-\_\-population (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_world_aeb43ebd4d41db15d1c20e186f0e8d743}
+
+
+Print the information about the population of the world. 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a \hyperlink{class_world}{World} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The information about the population of the implicit parameter is written to stdout. 
+\end{DoxyPostcond}
+\hypertarget{class_world_a186351586ccff8563f96fee8271e5dd6}{\index{World@{World}!migrate\-\_\-central@{migrate\-\_\-central}}
+\index{migrate\-\_\-central@{migrate\-\_\-central}!World@{World}}
+\subsubsection[{migrate\-\_\-central}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::migrate\-\_\-central (
+\begin{DoxyParamCaption}
+\item[{{\bf Region}}]{r, }
+\item[{int}]{h, }
+\item[{int}]{spec\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{class_world_a186351586ccff8563f96fee8271e5dd6}
+
+
+Perform a migration to the direction of the central plantation. 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a non-\/empty \hyperlink{class_world}{World} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The migration of h individuums of spec\-\_\-id species originating in the region r in the direction of the central plantation is performed in the implicit parameter. 
+\end{DoxyPostcond}
+\hypertarget{class_world_ae3475448895d1e9ccf66c5d60080abd4}{\index{World@{World}!migrate\-\_\-periferic@{migrate\-\_\-periferic}}
+\index{migrate\-\_\-periferic@{migrate\-\_\-periferic}!World@{World}}
+\subsubsection[{migrate\-\_\-periferic}]{\setlength{\rightskip}{0pt plus 5cm}void World\-::migrate\-\_\-periferic (
+\begin{DoxyParamCaption}
+\item[{{\bf Region}}]{r, }
+\item[{int}]{h, }
+\item[{int}]{spec\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{class_world_ae3475448895d1e9ccf66c5d60080abd4}
+
+
+Perform a migration to the direction of the perifery. 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a non-\/empty \hyperlink{class_world}{World} instance. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The migration of h individuums of spec\-\_\-id species originating in the region r in the direction of the perifery is performed in the implicit parameter. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_world_8hpp}{World.\-hpp}\end{DoxyCompactItemize}
