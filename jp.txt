@@ -44,3 +44,6 @@
                   // towards the central plant with the factor g equal to 10.
 
 -5                // Final print of the population.
+
+// Run `sed 's/\/\/.*$//g' jp.txt > jp-uncommented.txt` on this file to
+// receive uncommented input.
