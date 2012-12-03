@@ -20,7 +20,7 @@
 50 10 20          // 50, 10 and 20 animals of species 1, 2 and 3
                   // respectively in the region 3.
 10 10 40          // 10, 10 and 40 animals of species 1, 2 and 3
-                  // respectively in the region 3.
+                  // respectively in the region 4.
 
 -5                // Show current population in all the regions.
 
@@ -29,14 +29,18 @@
 -5                // Print all the population once more to see if
                   // the fight was done correctly.
 
+-3 30 3 4         // Add 30 animals of species 3 to the region 4.
+
 -2 1 4 3 30 15    // Migration to the periferic regions, starting in the
                   // region 4, of 30 units of the species 3, with the
                   // factor g equal to 15.
 
 -5                // Print all the population.
 
+-3 20 2 1         // Add 20 animals of species 2 to the region 1.
+
 -2 2 3 1 10 10    // One more migration. This time we make 10
-                  // units of the species 1 migrate from the region 3
+                  // units of the species 1 migrate from the region 1
                   // towards the central plant with the factor g equal to 10.
 
 -5                // Final print of the population.
