@@ -11,7 +11,8 @@
  */
 class World {
 private:
-    Arbre<Region> regions;
+    Arbre<int> structure;
+    vector<Region> regions;
 
 public:
     /** @brief Default constructor.

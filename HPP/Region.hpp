@@ -1,4 +1,5 @@
-/** @file Region.hpp 
+/* vim: set ft=cpp : */
+/** @file Region.hpp
  *  @brief Specification of the "Region" class
  */
 #ifndef REGION_HPP
@@ -6,7 +7,6 @@
 #include <vector>
 #include "utils.PRO2"
 #include "GrpSpecies.hpp"
-#include "Species.hpp"
 
 /** @class Region
 *   @brief Represents the Region - a territory where different species live.
@@ -16,6 +16,7 @@ private:
     /* Population in the region is saved as the vector 'animal id - value'
      */
     vector<int> population;
+    GrpSpecies species;
 public:
     /** @brief Default constructor.
      *

@@ -98,5 +98,7 @@ public:
      * does not exist, -1 is returned.
      */
     int prey_id(int seq);
+
+    int nprey();
 };
 #endif

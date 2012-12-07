@@ -8,6 +8,10 @@ Species::Species(bool carnivorous, int nutritious_minimum, int nutritious_value,
     this->prey = prey;
 }
 
+int Species::nprey() {
+    return this->nprey;
+}
+
 bool Species::is_carnivorous() {
     return carnivorous;
 }

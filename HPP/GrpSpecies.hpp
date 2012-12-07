@@ -1,3 +1,4 @@
+/* vim: set ft=cpp: */
 /** @file GrpSpecies.hpp
     @brief Specification of the "GrpSpecies" class
 */
@@ -15,6 +16,10 @@ private:
     /** @brief Vector where all the species of the group are stored.
      */
     vector<Species> vspecies;
+
+    /** @brief Vector where the alimentation priority information is stored.
+     */
+    vector<int> priority;
 
 public:
     /** @brief Default constructor.
@@ -45,6 +50,19 @@ public:
      * \post The implicit parameter is destroyed.
      */
     ~Species();
+
+    /** @brief The consultor operation for the priority between species.
+     *
+     * Allows us to get information about the priority in alimentation of
+     * the species of our group.
+     *
+     * \pre Implicit parameter is a valid group of species.
+     * \post If the animal which has a priority of 'count' in the vector exists,
+     * its ID is returned. If not, -1 is returned.
+     */
+    int priority_id(int count);
+
+    int quantity();
 
     /** @brief The member species carnivorousness consultor operation.
      *
