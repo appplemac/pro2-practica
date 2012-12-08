@@ -59,14 +59,14 @@ public:
      * \post The migration of h individuums of spec_id species originating in
      * the region r in the direction of the central plantation is performed in the implicit parameter.
      */
-    void migrate_central(Region r, int h, int spec_id);
+    void migrate_central(int r, int h, int spec_id);
 
     /** @brief Perform a migration to the direction of the perifery.
      * \pre The implicit parameter is a non-empty World instance.
      * \post The migration of h individuums of spec_id species originating in
      * the region r in the direction of the perifery is performed in the implicit parameter.
      */
-    void migrate_periferic(Region r, int h, int spec_id);
+    void migrate_periferic(int r, int h, int spec_id);
 };
 #endif
 
