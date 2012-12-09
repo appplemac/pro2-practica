@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">PRedatOr2
-   &#160;<span id="projectnumber">Mon Nov 12 2012</span>
+   &#160;<span id="projectnumber">Sun Dec 9 2012</span>
    </div>
   </td>
  </tr>
@@ -60,6 +60,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -89,34 +90,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_world_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef WORLD_HPP</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define WORLD_HPP</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;utils.PRO2&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_region_8hpp.html" title="Specification of the &quot;Region&quot; class.">Region.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="class_world.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_world.html" title="Represents the World – the group of Regions.">World</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Arbre&lt;Region&gt; regions;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_world.html#afa39d4e6f714a7a3691ac0c656f5e8a8" title="Default constructor.">World</a>();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="_region_8hpp.html" title="Specification of the &quot;Region&quot; class.">Region.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_grp_species_8hpp.html" title="Specification of the &quot;GrpSpecies&quot; class.">GrpSpecies.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//#include &quot;utils.PRO2&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//#include &quot;Arbre.hpp&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_world.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_world.html" title="Represents the World – the group of Regions.">World</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Arbre&lt;int&gt; structure;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    vector&lt;Region&gt; regions;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_grp_species.html" title="Represents the Group of Species – all the species that exist in the World.">GrpSpecies</a> species;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> region_fight(<span class="keywordtype">int</span> r);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> path_to_central(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; element, Arbre&lt;int&gt;&amp; tree, queue&lt;int&gt;&amp; path);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> cut_tree(<span class="keywordtype">int</span> element, Arbre&lt;int&gt;&amp; tree);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> to_periferics(Arbre&lt;int&gt; tree, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> spec_id, <span class="keywordtype">int</span> g);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_world.html#afa39d4e6f714a7a3691ac0c656f5e8a8" title="Default constructor.">World</a>(Arbre&lt;Region&gt; regions);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_world.html#a8c73fba541a5817fff65147ba47cd827" title="Default destructor.">~World</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a60f792899e98b54682755748f2576700" title="Fire up the fight between the species in the world.">fight</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#aeb43ebd4d41db15d1c20e186f0e8d743" title="Print the information about the population of the world.">get_population</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a186351586ccff8563f96fee8271e5dd6" title="Perform a migration to the direction of the central plantation.">migrate_central</a>(<a class="code" href="class_region.html" title="Represents the Region - a territory where different species live.">Region</a> r, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> spec_id);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#ae3475448895d1e9ccf66c5d60080abd4" title="Perform a migration to the direction of the perifery.">migrate_periferic</a>(<a class="code" href="class_region.html" title="Represents the Region - a territory where different species live.">Region</a> r, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> spec_id);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_world.html#afa39d4e6f714a7a3691ac0c656f5e8a8" title="Default constructor.">World</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_world.html#afa39d4e6f714a7a3691ac0c656f5e8a8" title="Default constructor.">World</a>(Arbre&lt;int&gt; structure, vector&lt;Region&gt; regions);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_world.html#a8c73fba541a5817fff65147ba47cd827" title="Default destructor.">~World</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a60f792899e98b54682755748f2576700" title="Fire up the fight between the species in the world.">fight</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a97f4a9b980d4e11790568b05909eb8a2" title="Print the information about the population of the world.">print_population</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#ad94ae4dc6a06819bca7ce2e0966ce5ab" title="Perform a migration to the direction of the central plantation.">migrate_central</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> spec_id, <span class="keywordtype">int</span> g);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#a75f296ca8a787b3a1546cae8ab52767d" title="Perform a migration to the direction of the perifery.">migrate_periferic</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> spec_id, <span class="keywordtype">int</span> g);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_world.html#ab997580c732ba82aa3847d0b3ac51dcf" title="Increase the population of a certain species in a certain region.">increase_population</a>(<span class="keywordtype">int</span> reg_id, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> spec_id);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 18 2012 17:05:06 for PRedatOr2 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 9 2012 15:22:35 for PRedatOr2 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

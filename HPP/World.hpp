@@ -3,8 +3,10 @@
 */
 #ifndef WORLD_HPP
 #define WORLD_HPP
-#include "utils.PRO2"
 #include "Region.hpp"
+#include "GrpSpecies.hpp"
+#include <vector>
+#include "utils.PRO2"
 #include "Arbre.hpp"
 
 /** @class World
@@ -12,13 +14,56 @@
  */
 class World {
 private:
+    /** @brief The structure of regions.
+     */
     Arbre<int> structure;
+
+    /** @brief The regions itself.
+     */
     vector<Region> regions;
+
+    /** @brief The species of the world.
+     */
     GrpSpecies species;
 
+    /** @brief The function that performs the fight in a region of the world.
+     *
+     * The functions that performs the fight between species in a certain region
+     * of the world.
+     *
+     * \pre The explicit argument points to a non-empty region.
+     * \post The fight in the region 'r' is performed.
+     */
     void region_fight(int r);
+
+    /** @brief Function used to determine the path to central region.
+     *
+     * This function helps us to retrieve the path from the region 'element' to
+     * the central plantation by storing it in the 'path' queue.
+     *
+     * \pre The implicit parameter contains the path from 'element' to the
+     * central plantation.
+     * \post The path from 'element' to the central region is stored in 'path'.
+     */
     void path_to_central(const int& element, Arbre<int>& tree, queue<int>& path);
+
+    /** @brief Function used to get the subtree of 'tree' with 'element' as root.
+      *
+      * This function finds the subtree of 'tree', which has 'element' as root
+      * and writes this subtree to the explicit parameter 'tree'.
+      *
+      * \pre True.
+      * \post 'tree' contains the 'cut' tree – the subtree with 'element' as a
+      * root.
+      */
     void cut_tree(int element, Arbre<int>& tree);
+
+    /** @brief Recursive function used to perform the migration to periferics.
+     *
+     * \pre True.
+     * \post The migration of h animals of 'spec_id' species if performed inside
+     * the 'tree' of regions.
+     */
     void to_periferics(Arbre<int> tree, int h, int spec_id, int g);
 
 public:

@@ -4,17 +4,17 @@
 void World::region_fight(int r) {
     for (int i = 0; i < species.quantity(); ++i) {
         int species_id = species.priority_id(i);
-        int count = regions[r].get_population(species_id);
+        int count = regions[r-1].get_population(species_id);
         while (count > 0) {
-            int remaining = species.nutritious_minimum(species_id);
-            for (int j = 0; j < species.nprey(species_id); ++j) {
+            int remaining = species.get_nutritious_minimum(species_id);
+            for (int j = 0; j < species.get_nprey(species_id); ++j) {
                 int current_prey_id = species.prey_id(species_id, j);
-                while (remaining > 0 and regions[r].get_population(current_prey_id) > 0) {
-                    remaining -= species.nutritious_value(current_prey_id);
+                while (remaining > 0 and regions[r-1].get_population(current_prey_id) > 0) {
+                    remaining -= species.get_nutritious_value(current_prey_id);
                     regions[r].decrease_population(1, current_prey_id);
                 }
             }
-            if (remaining > 0) regions[r].decrease_population(1, species_id);
+            if (remaining > 0) regions[r-1].decrease_population(1, species_id);
             --count;
         }
     }
@@ -103,15 +103,15 @@ void World::migrate_central(int r, int h, int spec_id, int g) {
     int current_region = r;
     int next_region = path.front();
     path.pop();
-    regions[current_region].decrease_population(h, spec_id);
-    regions[next_region].increase_population(h, spec_id);
+    regions[current_region-1].decrease_population(h, spec_id);
+    regions[next_region-1].increase_population(h, spec_id);
     while (not path.empty() and h >= g) {
         current_region = next_region;
         next_region = path.front();
         path.pop();
         q = h - h/2;
-        regions[current_region].decrease_population(q, spec_id);
-        regions[next_region].increase_population(q, spec_id);
+        regions[current_region-1].decrease_population(q, spec_id);
+        regions[next_region-1].increase_population(q, spec_id);
         h = q;
     }
 }

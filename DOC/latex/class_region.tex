@@ -15,20 +15,20 @@ Represents the \hyperlink{class_region}{Region} -\/ a territory where different 
 \begin{DoxyCompactList}\small\item\em The constructor which provides the non-\/empty population vector on creation. \end{DoxyCompactList}\item 
 \hyperlink{class_region_a3c3670fff78f7511d156e3b2f0bc6266}{$\sim$\-Region} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-void \hyperlink{class_region_a8124ecd078406df4edfb92861c9511e8}{fight} ()
-\begin{DoxyCompactList}\small\item\em Fight launching operation for the current region. \end{DoxyCompactList}\item 
 void \hyperlink{class_region_af822042e4b63e01b87e483fbabf2987d}{increase\-\_\-population} (int m, int id)
 \begin{DoxyCompactList}\small\item\em Increases the population of certain species in current region. \end{DoxyCompactList}\item 
 void \hyperlink{class_region_a38a911f9e1034421fd3706064385e4c5}{decrease\-\_\-population} (int m, int id)
 \begin{DoxyCompactList}\small\item\em Decreases the population of certain species in current region. \end{DoxyCompactList}\item 
-vector$<$ int $>$ \hyperlink{class_region_a76c03f5cb2a0f9941c7b00bbff59e9cb}{get\-\_\-population} ()
-\begin{DoxyCompactList}\small\item\em Population consultory operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_region_a0f651d194c71d11f7b85185c582b9a4d}{print\-\_\-population} ()
+\begin{DoxyCompactList}\small\item\em Prints the region's population to stdout. \end{DoxyCompactList}\item 
+int \hyperlink{class_region_a0a54bec22f7a6d7bd9025340544529ef}{get\-\_\-population} (int id)
+\begin{DoxyCompactList}\small\item\em Returns the population of a certain species in the current region. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Represents the \hyperlink{class_region}{Region} -\/ a territory where different species live. 
 
-Definition at line 14 of file Region.\-hpp.
+Definition at line 12 of file Region.\-hpp.
 
 
 
@@ -93,25 +93,6 @@ The implicit parameter is destroyed.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_region_a8124ecd078406df4edfb92861c9511e8}{\index{Region@{Region}!fight@{fight}}
-\index{fight@{fight}!Region@{Region}}
-\subsubsection[{fight}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::fight (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_region_a8124ecd078406df4edfb92861c9511e8}
-
-
-Fight launching operation for the current region. 
-
-The operation that lets us launch the fight between the species of the current region. During the fight all the species in the region eat till reach of the alimentary minimum or, otherwise, pass away.
-
-\begin{DoxyPrecond}{Precondition}
-The implicit parameter is a valid instance of the \hyperlink{class_region}{Region} class with a non-\/empty population vector. 
-\end{DoxyPrecond}
-\begin{DoxyPostcond}{Postcondition}
-The fight between species is launched. 
-\end{DoxyPostcond}
 \hypertarget{class_region_af822042e4b63e01b87e483fbabf2987d}{\index{Region@{Region}!increase\-\_\-population@{increase\-\_\-population}}
 \index{increase\-\_\-population@{increase\-\_\-population}!Region@{Region}}
 \subsubsection[{increase\-\_\-population}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::increase\-\_\-population (
@@ -148,22 +129,39 @@ Implicit parameter is an instance of the \hyperlink{class_region}{Region} class.
 \begin{DoxyPostcond}{Postcondition}
 Implicit parameter's \char`\"{}id\char`\"{} species population is decreased by m. 
 \end{DoxyPostcond}
-\hypertarget{class_region_a76c03f5cb2a0f9941c7b00bbff59e9cb}{\index{Region@{Region}!get\-\_\-population@{get\-\_\-population}}
-\index{get\-\_\-population@{get\-\_\-population}!Region@{Region}}
-\subsubsection[{get\-\_\-population}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ Region\-::get\-\_\-population (
+\hypertarget{class_region_a0f651d194c71d11f7b85185c582b9a4d}{\index{Region@{Region}!print\-\_\-population@{print\-\_\-population}}
+\index{print\-\_\-population@{print\-\_\-population}!Region@{Region}}
+\subsubsection[{print\-\_\-population}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::print\-\_\-population (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_region_a76c03f5cb2a0f9941c7b00bbff59e9cb}
+)}}\label{class_region_a0f651d194c71d11f7b85185c582b9a4d}
 
 
-Population consultory operation. 
+Prints the region's population to stdout. 
 
 \begin{DoxyPrecond}{Precondition}
-Implicit parameter is an instance of the \hyperlink{class_region}{Region} class. 
+Implicit parameter is a non-\/empty instance of the \hyperlink{class_region}{Region} class. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-Implicit parameter's population is returned as a vector of animal id -\/ value pairs. 
+Implicit parameter's population is written to the standard output. 
+\end{DoxyPostcond}
+\hypertarget{class_region_a0a54bec22f7a6d7bd9025340544529ef}{\index{Region@{Region}!get\-\_\-population@{get\-\_\-population}}
+\index{get\-\_\-population@{get\-\_\-population}!Region@{Region}}
+\subsubsection[{get\-\_\-population}]{\setlength{\rightskip}{0pt plus 5cm}int Region\-::get\-\_\-population (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_region_a0a54bec22f7a6d7bd9025340544529ef}
+
+
+Returns the population of a certain species in the current region. 
+
+\begin{DoxyPrecond}{Precondition}
+Implicit parameter is a non-\/empty instance of the \hyperlink{class_region}{Region} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The population of the species with the id equal to 'id' is returned. 
 \end{DoxyPostcond}
 
 

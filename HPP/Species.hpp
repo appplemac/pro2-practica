@@ -65,7 +65,7 @@ public:
      * \post The information about the nutritious minimum of the implicit
      * parameter is returned.
      */
-    int nutritious_minimum();
+    int get_nutritious_minimum();
 
     /** @brief Nutritious value consultor operation.
      *
@@ -75,7 +75,7 @@ public:
      * \post The information about the nutritious value of the implicit
      * parameter is returned.
      */
-    int nutritious_value();
+    int get_nutritious_value();
 
     /** @brief The operation of change of the prey vector.
      *
@@ -103,6 +103,6 @@ public:
      * \pre The implicit parameter is a valid instance of Species class.
      * \post The number of prey animals for current species is returned.
      */
-    int nprey();
+    int get_nprey();
 };
 #endif

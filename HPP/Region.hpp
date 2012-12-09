@@ -5,8 +5,6 @@
 #ifndef REGION_HPP
 #define REGION_HPP
 #include <vector>
-#include "utils.PRO2"
-#include "GrpSpecies.hpp"
 
 /** @class Region
 *   @brief Represents the Region - a territory where different species live.

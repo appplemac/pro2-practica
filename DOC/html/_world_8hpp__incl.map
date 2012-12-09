@@ -1,5 +1,5 @@
 <map id="World.hpp" name="World.hpp">
-<area shape="rect" id="node5" href="$_region_8hpp.html" title="Specification of the &quot;Region&quot; class." alt="" coords="75,86,169,117"/>
-<area shape="rect" id="node10" href="$_grp_species_8hpp.html" title="Specification of the &quot;GrpSpecies&quot; class." alt="" coords="62,166,183,197"/>
-<area shape="rect" id="node14" href="$_species_8hpp.html" title="Specification of the &quot;Species&quot; class." alt="" coords="163,246,260,277"/>
+<area shape="rect" id="node3" href="$_region_8hpp.html" title="Specification of the &quot;Region&quot; class." alt="" coords="4,86,99,117"/>
+<area shape="rect" id="node5" href="$_grp_species_8hpp.html" title="Specification of the &quot;GrpSpecies&quot; class." alt="" coords="123,86,244,117"/>
+<area shape="rect" id="node7" href="$_species_8hpp.html" title="Specification of the &quot;Species&quot; class." alt="" coords="135,166,232,197"/>
 </map>

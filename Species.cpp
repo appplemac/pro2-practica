@@ -12,11 +12,11 @@ bool Species::is_carnivorous() {
     return carnivorous;
 }
 
-int Species::nutritious_minimum() {
+int Species::get_nutritious_minimum() {
     return nutritious_minimum;
 }
 
-int Species::nutritious_value() {
+int Species::get_nutritious_value() {
     return nutritious_value;
 }
 
@@ -25,7 +25,7 @@ void Species::change_prey_preference() {
     cin >> vsize;
     vector<int> new_prey;
     for (int i = 0; i < vsize; ++i) {
-        cin >> vsize[i];
+        cin >> new_prey[i];
     }
     this->nprey = vsize;
     this->prey = new_prey;
@@ -36,6 +36,6 @@ int Species::prey_id(int seq) {
     return this->prey[seq];
 }
 
-int Species::nprey() {
+int Species::get_nprey() {
     return nprey;
 }

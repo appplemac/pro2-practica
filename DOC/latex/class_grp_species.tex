@@ -11,10 +11,14 @@ Represents the Group of \hyperlink{class_species}{Species} – all the species t
 \item 
 \hyperlink{class_grp_species_aae01eb441932fe90e69af5295f7449d3}{Grp\-Species} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}{Grp\-Species} (vector$<$ \hyperlink{class_species}{Species} $>$ vspecies)
+\hyperlink{class_grp_species_a528284319185c3d9e7dc23bdb6f47f58}{Grp\-Species} (vector$<$ \hyperlink{class_species}{Species} $>$ vspecies, vector$<$ int $>$ priority)
 \begin{DoxyCompactList}\small\item\em Constructor with extended set of settings. \end{DoxyCompactList}\item 
 \hyperlink{class_grp_species_aefa7f81cd9c5040080661a0aebbe94dd}{$\sim$\-Species} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_grp_species_ab7ed452e9d482a8f0a623ba0a4597fd1}{priority\-\_\-id} (int count)
+\begin{DoxyCompactList}\small\item\em The consultor operation for the priority between species. \end{DoxyCompactList}\item 
+int \hyperlink{class_grp_species_a6f8dd5cc59ac2647dead252ee64c8bd3}{priority\-\_\-size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the priority vector (the number of carnivorous species). \end{DoxyCompactList}\item 
 bool \hyperlink{class_grp_species_a40bca706f2c7ff5c29ad64efef91f5b0}{is\-\_\-carnivorous} (int id)
 \begin{DoxyCompactList}\small\item\em The member species carnivorousness consultor operation. \end{DoxyCompactList}\item 
 int \hyperlink{class_grp_species_ad805d0ed7ae160591693a234cf13383e}{nutritious\-\_\-minimum} (int id)
@@ -22,7 +26,11 @@ int \hyperlink{class_grp_species_ad805d0ed7ae160591693a234cf13383e}{nutritious\-
 int \hyperlink{class_grp_species_ac1d5b1342c36aea055cc6bee2215f187}{nutritious\-\_\-value} (int id)
 \begin{DoxyCompactList}\small\item\em Nutritious value consultor operation. \end{DoxyCompactList}\item 
 void \hyperlink{class_grp_species_a5d5691f011fe8f195d3297f08a0596d7}{change\-\_\-prey\-\_\-preference} (int id)
-\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_grp_species_acc72b9877cd8d59671a96762b51d87a1}{nprey} (int id)
+\begin{DoxyCompactList}\small\item\em Returns the number of prey species for a species from the group. \end{DoxyCompactList}\item 
+int \hyperlink{class_grp_species_ac486dcdf1d36b9935b396335f4567b6c}{prey\-\_\-id} (int id, int seq)
+\begin{DoxyCompactList}\small\item\em The operation of consulting one of the possible prey species. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,24 +60,25 @@ True.
 \begin{DoxyPostcond}{Postcondition}
 Implicit parameter is an empty instance if the \hyperlink{class_grp_species}{Grp\-Species} class. 
 \end{DoxyPostcond}
-\hypertarget{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}{\index{Grp\-Species@{Grp\-Species}!Grp\-Species@{Grp\-Species}}
+\hypertarget{class_grp_species_a528284319185c3d9e7dc23bdb6f47f58}{\index{Grp\-Species@{Grp\-Species}!Grp\-Species@{Grp\-Species}}
 \index{Grp\-Species@{Grp\-Species}!GrpSpecies@{Grp\-Species}}
 \subsubsection[{Grp\-Species}]{\setlength{\rightskip}{0pt plus 5cm}Grp\-Species\-::\-Grp\-Species (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf Species} $>$}]{vspecies}
+\item[{vector$<$ {\bf Species} $>$}]{vspecies, }
+\item[{vector$<$ int $>$}]{priority}
 \end{DoxyParamCaption}
-)}}\label{class_grp_species_a1ab7e26f4300775b44cc74044e45335c}
+)}}\label{class_grp_species_a528284319185c3d9e7dc23bdb6f47f58}
 
 
 Constructor with extended set of settings. 
 
-Creates the group of species with the vector of \hyperlink{class_species}{Species} specified by the explicit parameter.
+Creates the group of species with the vector of \hyperlink{class_species}{Species} specified by the first explicit parameter and the priority between those species specified by the second explicit parameter.
 
 \begin{DoxyPrecond}{Precondition}
-The explicit parameter is a valid vector of \hyperlink{class_species}{Species} objects. 
+True. 
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
-The group of species with the member species specified by the explicit parameter is created. 
+The group of species with the member species specified by the explicit parameters is created. 
 \end{DoxyPostcond}
 \hypertarget{class_grp_species_aefa7f81cd9c5040080661a0aebbe94dd}{\index{Grp\-Species@{Grp\-Species}!$\sim$\-Species@{$\sim$\-Species}}
 \index{$\sim$\-Species@{$\sim$\-Species}!GrpSpecies@{Grp\-Species}}
@@ -93,6 +102,42 @@ The implicit parameter is destroyed.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_grp_species_ab7ed452e9d482a8f0a623ba0a4597fd1}{\index{Grp\-Species@{Grp\-Species}!priority\-\_\-id@{priority\-\_\-id}}
+\index{priority\-\_\-id@{priority\-\_\-id}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{priority\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int Grp\-Species\-::priority\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_ab7ed452e9d482a8f0a623ba0a4597fd1}
+
+
+The consultor operation for the priority between species. 
+
+Allows us to get information about the priority in alimentation of the species of our group.
+
+\begin{DoxyPrecond}{Precondition}
+Implicit parameter is a valid group of species. Count is less than the total number of carnivorous species in the region and greater or equal than 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The I\-D of the animal which has a priority of 'count' in the vector is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_a6f8dd5cc59ac2647dead252ee64c8bd3}{\index{Grp\-Species@{Grp\-Species}!priority\-\_\-size@{priority\-\_\-size}}
+\index{priority\-\_\-size@{priority\-\_\-size}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{priority\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int Grp\-Species\-::priority\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_a6f8dd5cc59ac2647dead252ee64c8bd3}
+
+
+Returns the size of the priority vector (the number of carnivorous species). 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The size of the priority vector is returned. 
+\end{DoxyPostcond}
 \hypertarget{class_grp_species_a40bca706f2c7ff5c29ad64efef91f5b0}{\index{Grp\-Species@{Grp\-Species}!is\-\_\-carnivorous@{is\-\_\-carnivorous}}
 \index{is\-\_\-carnivorous@{is\-\_\-carnivorous}!GrpSpecies@{Grp\-Species}}
 \subsubsection[{is\-\_\-carnivorous}]{\setlength{\rightskip}{0pt plus 5cm}bool Grp\-Species\-::is\-\_\-carnivorous (
@@ -174,6 +219,45 @@ The implicit parameter is a valid group of species.
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 The information about the updated prey preference is written to the prey vector of the member species. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_acc72b9877cd8d59671a96762b51d87a1}{\index{Grp\-Species@{Grp\-Species}!nprey@{nprey}}
+\index{nprey@{nprey}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{nprey}]{\setlength{\rightskip}{0pt plus 5cm}void Grp\-Species\-::nprey (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_acc72b9877cd8d59671a96762b51d87a1}
+
+
+Returns the number of prey species for a species from the group. 
+
+The operation that allows us to get the number of prey species for the animals of current group.
+
+\begin{DoxyPrecond}{Precondition}
+The id is greater or equal than 0 and less than the number of species of current group. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The number of prey species for the 'id' species of current group is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_grp_species_ac486dcdf1d36b9935b396335f4567b6c}{\index{Grp\-Species@{Grp\-Species}!prey\-\_\-id@{prey\-\_\-id}}
+\index{prey\-\_\-id@{prey\-\_\-id}!GrpSpecies@{Grp\-Species}}
+\subsubsection[{prey\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int Grp\-Species\-::prey\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_grp_species_ac486dcdf1d36b9935b396335f4567b6c}
+
+
+The operation of consulting one of the possible prey species. 
+
+Allows us to get an id of a species with which we can alimentate current member animal.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid group of species. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The id of a prey unit, registered in the prey vector of current member species under the prey\mbox{[}seq\mbox{]} is returned if it exists. If the member species' prey\mbox{[}seq\mbox{]} does not exist, -\/1 is returned. 
 \end{DoxyPostcond}
 
 

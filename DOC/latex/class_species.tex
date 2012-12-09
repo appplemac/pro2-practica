@@ -11,7 +11,7 @@ Represents a base unit of the population – a \hyperlink{class_species}{Species
 \item 
 \hyperlink{class_species_abb0f8e3208b0cc676157b7dff837c0be}{Species} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{class_species_a66517a4f8a2507e555d8e05db47c549c}{Species} (bool carnivorous, int nutritious\-\_\-minimum, int nutritious\-\_\-value, int nprey, vector$<$ int $>$ vprey)
+\hyperlink{class_species_a16b8ced46ad340a73971735788c4da6e}{Species} (bool carnivorous, int nutritious\-\_\-minimum, int nutritious\-\_\-value, int nprey, vector$<$ int $>$ prey)
 \begin{DoxyCompactList}\small\item\em Constructor with extended set of settings. \end{DoxyCompactList}\item 
 \hyperlink{class_species_af36f93648e2dedc2f05b6fb0c067f35e}{$\sim$\-Species} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
@@ -22,7 +22,11 @@ int \hyperlink{class_species_a1ff07d6d5a5d03978d2c8df16f49b8d7}{nutritious\-\_\-
 int \hyperlink{class_species_abea0a065bd95c118115b6647fccb87a0}{nutritious\-\_\-value} ()
 \begin{DoxyCompactList}\small\item\em Nutritious value consultor operation. \end{DoxyCompactList}\item 
 void \hyperlink{class_species_a1292192418e6b58ff78a539b3742f2fc}{change\-\_\-prey\-\_\-preference} ()
-\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The operation of change of the prey vector. \end{DoxyCompactList}\item 
+int \hyperlink{class_species_a021f722194b0ce95c4f18de963f85a20}{prey\-\_\-id} (int seq)
+\begin{DoxyCompactList}\small\item\em The operation of consulting one of the possible prey species. \end{DoxyCompactList}\item 
+int \hyperlink{class_species_ab0efdbab578ade0701d39aa1ef7686fd}{nprey} ()
+\begin{DoxyCompactList}\small\item\em The operation of consulting the number of the prey animals. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,7 +56,7 @@ True.
 \begin{DoxyPostcond}{Postcondition}
 Implicit parameter is an empty instance if the \hyperlink{class_species}{Species} class. 
 \end{DoxyPostcond}
-\hypertarget{class_species_a66517a4f8a2507e555d8e05db47c549c}{\index{Species@{Species}!Species@{Species}}
+\hypertarget{class_species_a16b8ced46ad340a73971735788c4da6e}{\index{Species@{Species}!Species@{Species}}
 \index{Species@{Species}!Species@{Species}}
 \subsubsection[{Species}]{\setlength{\rightskip}{0pt plus 5cm}Species\-::\-Species (
 \begin{DoxyParamCaption}
@@ -60,9 +64,9 @@ Implicit parameter is an empty instance if the \hyperlink{class_species}{Species
 \item[{int}]{nutritious\-\_\-minimum, }
 \item[{int}]{nutritious\-\_\-value, }
 \item[{int}]{nprey, }
-\item[{vector$<$ int $>$}]{vprey}
+\item[{vector$<$ int $>$}]{prey}
 \end{DoxyParamCaption}
-)}}\label{class_species_a66517a4f8a2507e555d8e05db47c549c}
+)}}\label{class_species_a16b8ced46ad340a73971735788c4da6e}
 
 
 Constructor with extended set of settings. 
@@ -172,6 +176,42 @@ The implicit parameter is a valid instance of \hyperlink{class_species}{Species}
 \end{DoxyPrecond}
 \begin{DoxyPostcond}{Postcondition}
 The information about the updated prey preference is written to the prey vector of the implicit parameter. 
+\end{DoxyPostcond}
+\hypertarget{class_species_a021f722194b0ce95c4f18de963f85a20}{\index{Species@{Species}!prey\-\_\-id@{prey\-\_\-id}}
+\index{prey\-\_\-id@{prey\-\_\-id}!Species@{Species}}
+\subsubsection[{prey\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int Species\-::prey\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{seq}
+\end{DoxyParamCaption}
+)}}\label{class_species_a021f722194b0ce95c4f18de963f85a20}
+
+
+The operation of consulting one of the possible prey species. 
+
+Allows us to get an id of a species with which we can alimentate current animal.
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The id of a prey unit, registered in the prey vector of current species under the prey\mbox{[}seq\mbox{]} is returned if it exists. If the prey\mbox{[}seq\mbox{]} does not exist, -\/1 is returned. 
+\end{DoxyPostcond}
+\hypertarget{class_species_ab0efdbab578ade0701d39aa1ef7686fd}{\index{Species@{Species}!nprey@{nprey}}
+\index{nprey@{nprey}!Species@{Species}}
+\subsubsection[{nprey}]{\setlength{\rightskip}{0pt plus 5cm}int Species\-::nprey (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_species_ab0efdbab578ade0701d39aa1ef7686fd}
+
+
+The operation of consulting the number of the prey animals. 
+
+\begin{DoxyPrecond}{Precondition}
+The implicit parameter is a valid instance of \hyperlink{class_species}{Species} class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The number of prey animals for current species is returned. 
 \end{DoxyPostcond}
 
 

@@ -4,7 +4,6 @@
 */
 #ifndef GRP_SPECIES_HPP
 #define GRP_SPECIES_HPP
-#include "utils.PRO2"
 #include <vector>
 #include "Species.hpp"
 
@@ -50,7 +49,7 @@ public:
      * \pre The implicit parameter is a GrpSpecies instance.
      * \post The implicit parameter is destroyed.
      */
-    ~Species();
+    ~GrpSpecies();
 
     /** @brief The consultor operation for the priority between species.
      *
@@ -93,7 +92,7 @@ public:
      * \post The information about the nutritious minimum of the member species
      * is returned.
      */
-    int nutritious_minimum(int id);
+    int get_nutritious_minimum(int id);
 
     /** @brief Nutritious value consultor operation.
      *
@@ -104,7 +103,7 @@ public:
      * \post The information about the nutritious value of the member species
      * is returned.
      */
-    int nutritious_value(int id);
+    int get_nutritious_value(int id);
 
     /** @brief The operation of change of the prey vector.
      *
@@ -126,7 +125,7 @@ public:
      * \post The number of prey species for the 'id' species of current group is
      * returned.
      */
-    void nprey(int id);
+    int get_nprey(int id);
 
     /** @brief The operation of consulting one of the possible prey species.
      *
