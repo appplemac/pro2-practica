@@ -8,6 +8,7 @@
 #include <vector>
 #include "utils.PRO2"
 #include "Arbre.hpp"
+#include <queue>
 
 /** @class World
  *  @brief Represents the World – the group of Regions.
@@ -45,7 +46,7 @@ private:
      * central plantation.
      * \post The path from 'element' to the central region is stored in 'path'.
      */
-    void path_to_central(const int& element, Arbre<int>& tree, queue<int>& path);
+    bool path_to_central(const int& element, Arbre<int>& tree, queue<int>& path);
 
     /** @brief Function used to get the subtree of 'tree' with 'element' as root.
       *
@@ -74,7 +75,7 @@ public:
      *   \pre True.
      *   \post The result is an empty world.
      */
-    World();
+    World() {}
 
     /** @brief Constructor with the main data structures (the structure tree and the
      * vector of regions) passed as an explicit parameters.
@@ -83,7 +84,7 @@ public:
      * \post The result is a world with the structure of regions specified in
      * the explicit parameters.
      */
-    World(Arbre<int> structure, vector<Region> regions);
+    World(Arbre<int> structure, vector<Region> regions, GrpSpecies species);
 
     /** @brief Default destructor.
      *
@@ -92,7 +93,7 @@ public:
      * \pre The implicit parameter is a non-empty World instance.
      * \post The implicit parameter is destroyed.
      */
-    ~World();
+    ~World() {}
 
     /** @brief Fire up the fight between the species in the world.
      * \pre The implicit parameter is a World instance.

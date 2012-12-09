@@ -2,7 +2,7 @@
  * @brief The main program for the PRedatOr2 project,
  */
 #include "World.hpp"
-using namespace std;
+#include "Arbre.hpp"
 
 void read_tree(Arbre<int>& a, int marca) {
     Arbre<int> a1;
@@ -29,14 +29,15 @@ int main() {
         for (int j = 0; j < np; ++j) {
             cin >> prey[j];
         }
-        cin >> cm;
-        Species current_species(carn, cm, va, np, prey);
-        vspecies[i] = current_species;
+        if (carn) cin >> cm;
+        else cm = 0;
+        vspecies[i] = Species::Species(carn, cm, va, np, prey);
+    }
     vector<int> priority (c);
     for (int k = 0; k < c; ++k) {
         cin >> priority[k];
     }
-    GrpSpecies species(vspecies, priority);
+    GrpSpecies::GrpSpecies species(vspecies, priority);
     int nr;
     cin >> nr;
     vector<Region> regions (nr);
@@ -47,14 +48,13 @@ int main() {
         for (int m = 0; m < n; ++m) {
             cin >> population[m];
         }
-        Region current_region(population, species);
+        Region current_region(population);
         regions[l] = current_region;
     }
-    World world(structure, regions);
+    World world(structure, regions, species);
 
     int option;
-    cin >> option;
-    while (option != -6) {
+    while (cin >> option and option != -6) {
         if (option == -1) world.fight();
         else if (option == -2) {
              int type, origin, id, num, g;
@@ -73,10 +73,7 @@ int main() {
             species.change_prey_preference(id);
         }
         else if (option == -5) {
-            world.get_population();
+            world.print_population();
         }
-        cin >> option;
     }
-
 }
-

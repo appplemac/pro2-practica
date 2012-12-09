@@ -13,7 +13,7 @@ class Region {
 private:
     /* Population in the region is saved as the vector 'animal id - value'
      */
-    vector<int> population;
+    std::vector<int> population;
 
 public:
     /** @brief Default constructor.
@@ -23,7 +23,7 @@ public:
      * \pre True.
      * \post Implicit parameter is an empty instance if the Region class.
      */
-    Region();
+    Region() {}
 
     /** @brief The constructor which provides the non-empty population vector on
      * creation.
@@ -34,7 +34,7 @@ public:
      * \post The implicit parameter is a valid region with the population
      * specified the the first explicit parameter.
      */
-    Region(vector<int> population);
+    Region(std::vector<int> population);
 
     /** @brief Default destructor.
      *
@@ -43,7 +43,7 @@ public:
      * \pre The implicit parameter is a Region instance.
      * \post The implicit parameter is destroyed.
      */
-    ~Region();
+    ~Region() {}
 
     /** @brief Increases the population of certain species in current region.
      *

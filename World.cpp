@@ -1,8 +1,9 @@
 #include "World.hpp"
-#include <queue>
+#include "Species.hpp"
+#include "GrpSpecies.hpp"
 
 void World::region_fight(int r) {
-    for (int i = 0; i < species.quantity(); ++i) {
+    for (int i = 0; i < species.priority_size(); ++i) {
         int species_id = species.priority_id(i);
         int count = regions[r-1].get_population(species_id);
         while (count > 0) {
@@ -11,7 +12,8 @@ void World::region_fight(int r) {
                 int current_prey_id = species.prey_id(species_id, j);
                 while (remaining > 0 and regions[r-1].get_population(current_prey_id) > 0) {
                     remaining -= species.get_nutritious_value(current_prey_id);
-                    regions[r].decrease_population(1, current_prey_id);
+                    cout << "decreasing population of species" << current_prey_id;
+                    regions[r-1].decrease_population(1, current_prey_id);
                 }
             }
             if (remaining > 0) regions[r-1].decrease_population(1, species_id);
@@ -27,15 +29,13 @@ bool World::path_to_central(const int& element, Arbre<int>& tree, queue<int>& pa
     Arbre<int> right;
     Arbre<int> left;
     tree.fills(left, right);
-    if (not left.es_buit() and path_search(element, left, path)) {
-            path.push(tree.arrel());
-            return true;
-        }
+    if (not left.es_buit() and path_to_central(element, left, path)) {
+        path.push(tree.arrel());
+        return true;
     }
-    else if (not right.es_buit() and path_search(element, right, path)) {
-            path.push(tree.arrel());
-            return true;
-        }
+    else if (not right.es_buit() and path_to_central(element, right, path)) {
+        path.push(tree.arrel());
+        return true;
     }
     else return false;
 }
@@ -56,8 +56,8 @@ void World::to_periferics(Arbre<int> tree, int h, int spec_id, int g) {
     int root = tree.arrel();
     Arbre<int> left, right;
     tree.fills(left, right);
-    if (left.is_buit() and right.es_buit()) return;
-    q = h/2;
+    if (left.es_buit() and right.es_buit()) return;
+    int q = h/2;
     bool one = (left.es_buit() or right.es_buit());
     if (one) {
         regions[root-1].decrease_population((h-q), spec_id);
@@ -79,13 +79,14 @@ void World::to_periferics(Arbre<int> tree, int h, int spec_id, int g) {
     }
 }
 
-World::World(Arbre<int> structure, vector<Region> regions) {
+World::World(Arbre<int> structure, vector<Region> regions, GrpSpecies species) {
     this->structure = structure;
     this->regions = regions;
+    this->species = species;
 }
 
 void World::fight() {
-    for (int i = 0; i < regions.size(); ++i) {
+    for (int i = 1; i <= regions.size(); ++i) {
         region_fight(i);
     }
 }
@@ -99,7 +100,7 @@ void World::print_population() {
 void World::migrate_central(int r, int h, int spec_id, int g) {
     queue<int> path;
     Arbre<int> tree(structure);
-    path_search(r, tree, path);
+    path_to_central(r, tree, path);
     int current_region = r;
     int next_region = path.front();
     path.pop();
@@ -109,7 +110,7 @@ void World::migrate_central(int r, int h, int spec_id, int g) {
         current_region = next_region;
         next_region = path.front();
         path.pop();
-        q = h - h/2;
+        int q = h - h/2;
         regions[current_region-1].decrease_population(q, spec_id);
         regions[next_region-1].increase_population(q, spec_id);
         h = q;
@@ -123,5 +124,5 @@ void World::migrate_periferic(int r, int h, int spec_id, int g) {
 }
 
 void World::increase_population(int reg_id, int m, int spec_id) {
-    regions[reg_id-1].increase_population(m, id);
+    regions[reg_id-1].increase_population(m, spec_id);
 }

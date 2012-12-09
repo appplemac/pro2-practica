@@ -1,6 +1,7 @@
 #include "Region.hpp"
+#include <iostream>
 
-Region::Region(vector<int> population) {
+Region::Region(std::vector<int> population) {
     this->population = population;
 }
 
@@ -14,9 +15,9 @@ void Region::decrease_population(int m, int id) {
 
 void Region::print_population() {
     for (int i = 0; i < population.size(); ++i) {
-        cout << population[i] << " ";
+        std::cout << population[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 int Region::get_population(int id) {

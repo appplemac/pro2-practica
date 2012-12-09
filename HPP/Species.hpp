@@ -25,7 +25,7 @@ public:
      * \pre True.
      * \post Implicit parameter is an empty instance if the Species class.
      */
-    Species();
+    Species() {}
 
     /** @brief Constructor with extended set of settings.
      *
@@ -45,7 +45,7 @@ public:
      * \pre The implicit parameter is a non-empty Species instance.
      * \post The implicit parameter is destroyed.
      */
-    ~Species();
+    ~Species() {}
 
     /** @brief Carnivorousness consultor operation.
      *

@@ -28,7 +28,7 @@ public:
      * \pre True.
      * \post Implicit parameter is an empty instance if the GrpSpecies class.
      */
-    GrpSpecies();
+    GrpSpecies() {}
 
     /** @brief Constructor with extended set of settings.
      *
@@ -49,7 +49,7 @@ public:
      * \pre The implicit parameter is a GrpSpecies instance.
      * \post The implicit parameter is destroyed.
      */
-    ~GrpSpecies();
+    ~GrpSpecies() {}
 
     /** @brief The consultor operation for the priority between species.
      *
