@@ -16,7 +16,7 @@ private:
     /* Population in the region is saved as the vector 'animal id - value'
      */
     vector<int> population;
-    GrpSpecies species;
+
 public:
     /** @brief Default constructor.
      *
@@ -47,18 +47,6 @@ public:
      */
     ~Region();
 
-    /** @brief Fight launching operation for the current region.
-     *
-     * The operation that lets us launch the fight between the species of the
-     * current region. During the fight all the species in the region eat till
-     * reach of the alimentary minimum or, otherwise, pass away.
-     *
-     * \pre The implicit parameter is a valid instance of the Region class with
-     * a non-empty population vector.
-     * \post The fight between species is launched.
-     */
-    void fight();
-
     /** @brief Increases the population of certain species in current region.
      *
      * \pre Implicit parameter is an instance of the Region class.
@@ -73,12 +61,19 @@ public:
      */
     void decrease_population(int m, int id);
 
-    /** @brief Population consultory operation.
+    /** @brief Prints the region's population to stdout.
      *
-     * \pre Implicit parameter is an instance of the Region class.
-     * \post Implicit parameter's population is returned as a vector of animal
-     * id - value pairs.
+     * \pre Implicit parameter is a non-empty instance of the Region class.
+     * \post Implicit parameter's population is written to the standard output.
      */
-    vector<int> get_population();
+    void print_population();
+
+    /** @brief Returns the population of a certain species in the current region.
+     *
+     * \pre Implicit parameter is a non-empty instance of the Region class.
+     * \post The population of the species with the id equal to 'id' is
+     * returned.
+     */
+    int get_population(int id);
 };
 #endif

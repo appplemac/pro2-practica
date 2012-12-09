@@ -1,4 +1,4 @@
-#include "HPP/Species.hpp"
+#include "Species.hpp"
 
 Species::Species(bool carnivorous, int nutritious_minimum, int nutritious_value, int nprey, vector<int> prey) {
     this->carnivorous = carnivorous;
@@ -6,10 +6,6 @@ Species::Species(bool carnivorous, int nutritious_minimum, int nutritious_value,
     this->nutritious_value = nutritious_value;
     this->nprey = nprey;
     this->prey = prey;
-}
-
-int Species::nprey() {
-    return this->nprey;
 }
 
 bool Species::is_carnivorous() {
@@ -38,4 +34,8 @@ void Species::change_prey_preference() {
 int Species::prey_id(int seq) {
     if (seq > nprey-1) return -1;
     return this->prey[seq];
+}
+
+int Species::nprey() {
+    return nprey;
 }

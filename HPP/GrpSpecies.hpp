@@ -34,13 +34,14 @@ public:
     /** @brief Constructor with extended set of settings.
      *
      * Creates the group of species with the vector of Species specified by the
-     * explicit parameter.
+     * first explicit parameter and the priority between those species specified
+     * by the second explicit parameter.
      *
-     * \pre The explicit parameter is a valid vector of Species objects.
+     * \pre True.
      * \post The group of species with the member species specified by the
-     * explicit parameter is created.
+     * explicit parameters is created.
      */
-    GrpSpecies(vector<Species> vspecies);
+    GrpSpecies(vector<Species> vspecies, vector<int> priority);
 
     /** @brief Default destructor.
      *
@@ -56,13 +57,21 @@ public:
      * Allows us to get information about the priority in alimentation of
      * the species of our group.
      *
-     * \pre Implicit parameter is a valid group of species.
-     * \post If the animal which has a priority of 'count' in the vector exists,
-     * its ID is returned. If not, -1 is returned.
+     * \pre Implicit parameter is a valid group of species. Count is less than
+     * the total number of carnivorous species in the region and greater or
+     * equal than 0.
+     * \post The ID of the animal which has a priority of 'count' in the vector
+     * is returned.
      */
     int priority_id(int count);
 
-    int quantity();
+    /** @brief Returns the size of the priority vector (the number of
+     * carnivorous species).
+     *
+     * \pre The implicit parameter is a valid group of species.
+     * \post The size of the priority vector is returned.
+     */
+    int priority_size();
 
     /** @brief The member species carnivorousness consultor operation.
      *
@@ -106,6 +115,19 @@ public:
      * prey vector of the member species.
      */
     void change_prey_preference(int id);
+
+    /** @brief Returns the number of prey species for a species from the group.
+     *
+     * The operation that allows us to get the number of prey species for the
+     * animals of current group.
+     *
+     * \pre The id is greater or equal than 0 and less than the number of
+     * species of current group.
+     * \post The number of prey species for the 'id' species of current group is
+     * returned.
+     */
+    void nprey(int id);
+
     /** @brief The operation of consulting one of the possible prey species.
      *
      * Allows us to get an id of a species with which we can alimentate current

@@ -99,6 +99,10 @@ public:
      */
     int prey_id(int seq);
 
+    /** @brief The operation of consulting the number of the prey animals.
+     * \pre The implicit parameter is a valid instance of Species class.
+     * \post The number of prey animals for current species is returned.
+     */
     int nprey();
 };
 #endif
