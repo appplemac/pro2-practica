@@ -1,11 +1,15 @@
+/** @file Region.cpp
+ * @brief Implementation of the Region class.
+ */
 #include "Region.hpp"
-#include <iostream>
 
 Region::Region(std::vector<int> population) {
     this->population = population;
 }
 
 void Region::increase_population(int m, int id) {
+    // Same thing as in the GrpRegions - we substract 1 to the id because the
+    // position of the animal with an id 1 is actually 0 in the vector.
     population[id-1] += m;
 }
 

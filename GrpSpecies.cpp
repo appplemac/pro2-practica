@@ -1,3 +1,6 @@
+/** @file GrpSpecies.cpp
+ * @brief Implementation of the GrpSpecies class.
+ */
 #include "GrpSpecies.hpp"
 
 GrpSpecies::GrpSpecies(vector<Species> vspecies, vector<int> priority) {
@@ -6,8 +9,7 @@ GrpSpecies::GrpSpecies(vector<Species> vspecies, vector<int> priority) {
 }
 
 int GrpSpecies::priority_id(int count) {
-    if (count < priority.size()) return priority[count];
-    return -1;
+    return priority[count];
 }
 
 int GrpSpecies::priority_size() {
@@ -15,6 +17,8 @@ int GrpSpecies::priority_size() {
 }
 
 bool GrpSpecies::is_carnivorous(int id) {
+    // Here, and in some other functions, we substract 1 to the id since the
+    // position of the species 1 in the vector is actually 0.
     return vspecies[id-1].is_carnivorous();
 }
 
@@ -35,5 +39,5 @@ int GrpSpecies::get_nprey(int id) {
 }
 
 int GrpSpecies::prey_id(int id, int seq) {
-    return vspecies[id].prey_id(seq);
+    return vspecies[id-1].prey_id(seq);
 }

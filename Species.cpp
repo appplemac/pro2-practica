@@ -1,3 +1,6 @@
+/** @file Species.cpp
+ * @brief Implementation of the Species class.
+ */
 #include "Species.hpp"
 
 Species::Species(bool carnivorous, int nutritious_minimum, int nutritious_value, int nprey, vector<int> prey) {
@@ -23,16 +26,17 @@ int Species::get_nutritious_value() {
 void Species::change_prey_preference() {
     int vsize;
     cin >> vsize;
-    vector<int> new_prey;
+    vector<int> new_prey(vsize);
     for (int i = 0; i < vsize; ++i) {
         cin >> new_prey[i];
     }
-    this->nprey = vsize;
     this->prey = new_prey;
+    this->nprey = new_prey.size();
 }
 
 int Species::prey_id(int seq) {
-    if (seq > nprey-1) return -1;
+    // The function used to dispatch the prey animal ids. Written this way for
+    // more modularity.
     return this->prey[seq];
 }
 
